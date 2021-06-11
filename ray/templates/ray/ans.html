@@ -1,0 +1,101 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>{{title}}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static '/home/madcroctony/sam/static/style.css' %}">
+    </head>
+    <body>
+        <h1>user={{user}}</h1>
+
+        {% if turn_name %}
+            <h2>turn is {{turn_name}}</h2>
+            <br>
+
+        {% endif %}
+
+        <br>
+
+        {% if acount %}
+            {% for name, list in acount.items %}
+            {% if name == request.user.username %}
+                {% for line in list %}
+                    <div style="display:inline-flex">
+                    {% for column in line %}
+                        {% if column == '＋' %}
+                            <input type="submit" value="{{ forloop.parentloop.counter0 }}/{{ forloop.counter0 }}" class="btn btn-primary" style="margin:9px">
+
+                        {% else %}
+                            <font size="7" style="margin:10px"><p>{{column}}</p></font>
+                        {% endif %}
+                    {% endfor %}
+                    </div>
+
+                <br>
+                {% endfor %}
+            {% endif %}
+            {% endfor %}
+        {% endif %}
+
+
+
+        <h2>black = {{black}}</h2>
+        <h2>white = {{white}}</h2>
+
+        <script>
+            // ページをreloadする方法
+            // reloadの基本的な使い方
+            function doReload() {
+
+            // reloadメソッドによりページをリロード
+            window.location.reload();
+            }
+
+            window.addEventListener('load', function () {
+
+            // ページ表示完了した2.5秒後にリロード
+            setTimeout(doReload, 2500);
+            });
+        </script>
+
+        {% if black_box %}
+            <h2>black can put = </h2>
+            {% for name, box in black_box.items %}
+                <h2>{{name}} : {{box}}</h2>
+            {% endfor %}
+        {% endif %}
+
+        {% if white_box %}
+            <h2>white can put = </h2>
+            {% for name, box in white_box.items %}
+                <h2>{{name}} : {{box}}</h2>
+            {% endfor %}
+        {% endif %}
+
+        <h2>entry={{entry}}</h2>
+
+        <div style="display:inline-flex">
+            {% if turn %}
+                <h2>turn = </h2>
+                {% for name, number in turn.items %}
+                    <h2>{{name}} : {{number}}/</h2>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <br>
+
+        <div style="display:inline-flex">
+            {% if enemy %}
+                <h2>enemy = </h2>
+                {% for name, name2 in enemy.items %}
+                    <h2>{{name}} : {{name2}}/</h2>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <br>
+
+    </body>
+</html>

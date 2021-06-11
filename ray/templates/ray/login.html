@@ -1,0 +1,25 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+    <head>
+        <title>login</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            crossorigin="anonymous">
+    </head>
+    <body class="container">
+        <h1 class="display-4 text-primary">login</h1>
+        <!--<h2 class="display-4 text-primary">{{username}}</h1>-->
+        <form action="{% url 'ray:login' %}" method="post">
+            {% csrf_token %}
+            <h2>username</h2>
+            <input type="text" name="username_data" autocomplete="off" size="40" style="height:50px">
+            <br>
+            <h2>password</h2>
+            <input type="text" name='password_data' autocomplete="off" size="40" style="height:50px">
+            <br>
+            <br>
+            <input type="submit" name="click" value="click" class="btn btn-lg btn-primary">
+        </form>
+    </body>
+</html>

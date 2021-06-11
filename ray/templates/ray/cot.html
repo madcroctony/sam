@@ -1,0 +1,52 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>{{title}}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'ever/css/style.css' %}">
+
+        <script type="text/javascript" src="paste.js?var=1.0"></script>
+    </head>
+    <body class="container">
+        <h1 class='dispaly-4 mt-4'>account is {{ request.user.username }}</h1>
+
+
+        <div style="display:inline-flex">
+        {% if acount %}
+            {% for name, list in acount.items %}
+            {% if name == request.user.username %}
+                {% for line in list %}
+
+                    {% for column in line %}
+                        {% if column == '＋' %}
+                            <form action="{% url 'ray:cot' %}" method="post">
+                                {% csrf_token %}
+                                <input type="submit" name="hit" value="{{ forloop.parentloop.counter0 }}/{{ forloop.counter0 }}" style="width:100px;height:80px;margin:10px" class="btn btn-primary">
+                            </form>
+                        {% endif %}
+                    {% endfor %}
+
+                <br>
+                {% endfor %}
+            {% endif %}
+            {% endfor %}
+            <form action="{% url 'ray:cot' %}" method="post">
+                {% csrf_token %}
+                <input type="submit" name="load" value="load" style="width:100px;height:80px;margin:10px">
+            </form>
+        {% endif %}
+        </div>
+
+
+        <!--<h1>ans.html answer</h1>-->
+        <iframe id="paste_window" src="https://madcroctony.pythonanywhere.com/ray/ans" width="1100" height="1400">
+        </iframe>
+        <br>
+        <font size="7"><a href="{% url 'ray:all_logout' %}">all_logout</a></font>
+
+    </body>
+</html>

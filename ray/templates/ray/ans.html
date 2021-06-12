@@ -46,18 +46,14 @@
         <h2>white = {{white}}</h2>
 
         <script>
-            // ページをreloadする方法
-            // reloadの基本的な使い方
-            function doReload() {
-
-            // reloadメソッドによりページをリロード
-            window.location.reload();
+            function doReload()
+            {
+                window.location.reload();
             }
 
-            window.addEventListener('load', function () {
-
-            // ページ表示完了した2.5秒後にリロード
-            setTimeout(doReload, 2500);
+            window.addEventListener('load', function ()
+            {
+                setTimeout(doReload, 2500);
             });
         </script>
 

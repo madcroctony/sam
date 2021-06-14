@@ -6,7 +6,7 @@
         <title>{{title}}</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
             crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="{% static '/home/madcroctony/sam/static/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static '/home/<username>/sam/static/style.css' %}">
     </head>
     <body>
         <h1>user={{user}}</h1>
@@ -26,10 +26,18 @@
                     <div style="display:inline-flex">
                     {% for column in line %}
                         {% if column == '＋' %}
-                            <input type="submit" value="{{ forloop.parentloop.counter0 }}/{{ forloop.counter0 }}" class="btn btn-primary" style="margin:9px">
+                            <input type="submit" value="{{ forloop.parentloop.counter0 }}/{{ forloop.counter0 }}" class="btn btn-primary" style="margin:9px;height:100px;width:80px">
+
+                        {% elif column == 'ｂ' %}
+                            <input type="submit" value="ｂ" class="btn btn-dark" style="margin:9px;height:100px;width:80px">
+
+                        {% elif column == 'ｗ' %}
+                            <input type="submit" value="ｗ" class="btn btn-light" style="margin:9px;height:100px;width:80px">
 
                         {% else %}
-                            <font size="7" style="margin:10px"><p>{{column}}</p></font>
+                            <input type="submit" value="" class="btn btn-secondary" style="margin:9px;height:100px;width:80px">
+
+
                         {% endif %}
                     {% endfor %}
                     </div>
@@ -57,6 +65,7 @@
             });
         </script>
 
+        <!--
         {% if black_box %}
             <h2>black can put = </h2>
             {% for name, box in black_box.items %}
@@ -70,6 +79,7 @@
                 <h2>{{name}} : {{box}}</h2>
             {% endfor %}
         {% endif %}
+        -->
 
         <h2>entry={{entry}}</h2>
 

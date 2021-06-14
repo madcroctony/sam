@@ -5,7 +5,7 @@ acount is ユーザー名
 black⇒黒のユーザーのコマ数，white⇒白のユーザーのコマ数<br>
 entry⇒ログインしている人数<br>
 turn⇒1と表示されているユーザーがコマを置くことができる，enemy⇒対戦相手<br>
-サーバはPythonAnywhereのものを使用<br>
+フレームワークはDjango，サーバはPythonAnywhereのものを使用<br>
 1つ目：aaaとbbbが対戦している動画，2つ目：cccとdddが対戦している動画<br>
 
 https://user-images.githubusercontent.com/76951687/121877198-55272b80-cd45-11eb-907b-e19b4ef62b0b.mp4

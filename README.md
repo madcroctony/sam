@@ -5,7 +5,7 @@ acount is ユーザー名
 black⇒黒のユーザーのコマ数，white⇒白のユーザーのコマ数<br>
 entry⇒ログインしている人数<br>
 turn⇒1と表示されているユーザーがコマを置くことができる，enemy⇒対戦相手<br>
-aaaとbbbが対戦している動画<br>
+aaaとbbbが対戦している動画
 https://user-images.githubusercontent.com/76951687/121874438-52770700-cd42-11eb-94c6-b88074cbee31.mp4
 
 

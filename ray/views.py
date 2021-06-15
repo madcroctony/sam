@@ -8,9 +8,7 @@ class Games:
     def __init__(shelf):
         shelf.H = 8
         shelf.W = 8
-        #shelf.line_number = ['０', '１', '２', '３', '４', '５', '６', '７', '８', '９']
-        #shelf.column_number = ['０', '１', '２', '３', '４', '５', '６', '７', '８', '９']
-
+       
         shelf.name = 'Number_Count'
         shelf.count = 0
         shelf.turn = 0
@@ -1199,7 +1197,6 @@ class Games:
 
     def signup(shelf, req):
         #user_check = req.user
-        #print('user_check=', user_check)
         shelf.params['username'] = 'ray'
         if req.method == 'POST':
             username = req.POST['username_data']

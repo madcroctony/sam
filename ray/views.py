@@ -1197,7 +1197,6 @@ class Games:
 
     def signup(shelf, req):
         #user_check = req.user
-        shelf.params['username'] = 'ray'
         if req.method == 'POST':
             username = req.POST['username_data']
             password = req.POST['password_data']
